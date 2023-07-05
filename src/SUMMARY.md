@@ -14,7 +14,9 @@
     - [AWS](./home/reference_architecture/aws.md)
     - [Azure](./home/reference_architecture/azure.md)
     - [GCP](./home/reference_architecture/gcp.md)
+
 ---
+
 # Score
 
 - [Score](./score.md)
@@ -89,10 +91,13 @@
     - [Features](./integration_and_extensions/workload_profiles/features.md)
   - [CI/CD](./integration_and_extensions/ci_cd.md)
   - [Webhooks](./integration_and_extensions/webhooks.md)
+
 # Knowledge base
+
 - [Knowledge base](./knowledge_base.md)
 
 ---
+
 # Concepts
 
 - [Concepts](./concepts.md)
