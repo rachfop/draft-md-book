@@ -14,8 +14,22 @@
     - [AWS](./home/reference_architecture/aws.md)
     - [Azure](./home/reference_architecture/azure.md)
     - [GCP](./home/reference_architecture/gcp.md)
-
 ---
+# Score
+
+- [Score](./score.md)
+  - [Getting started](./score/getting_started.md)
+    - [Hello world](./score/getting_started/hello_world.md)
+    - [Review logs](./score/getting_started/review_logs.md)
+    - [Get DNS](./score/getting_started/get_dns.md)
+    - [Set Shared Values and Secrets](./score/getting_started/set_shared_values_and_secrets.md)
+  - [Working with](./score/working_with.md)
+    - [Workload variables](./score/working_with/workload_variables.md)
+  - [Reference](./score/reference.md)
+    - [Command reference overview](./score/reference/command_reference_overview.md)
+    - [Delta](./score/reference/delta.md)
+    - [Run](./score/reference/run.md)
+  - [Troubleshooting](./score/troubleshooting.md)
 
 # Platform Orchestrator
 
@@ -33,40 +47,17 @@
     - [Active Resources](./platform_orchestrator/resources/active_resources.md)
     - [Resource Definitions](./platform_orchestrator/resources/resource_definitions.md)
     - [Resource Graph](./platform_orchestrator/resources/resource_graph.md)
-  - [Automation](./platform_orchestrator/automation.md)
-    - [Overveiw](./platform_orchestrator/automation/overview.md)
-    - [CI/CD](./platform_orchestrator/automation/ci_cd.md)
-    - [Webhooks](./platform_orchestrator/automation/webhooks.md)
+
   - [Security](./platform_orchestrator/security.md)
-    - [Overview](./platform_orchestrator/security/overview.md)
     - [Authentication](./platform_orchestrator/security/authentication.md)
     - [RBAC](./platform_orchestrator/security/rbac.md)
   - [References](./platform_orchestrator/references.md)
     - [API Reference](./platform_orchestrator/references/api_reference.md)
     - [CLI Reference](./platform_orchestrator/references/cli_reference.md)
     - [Constraints](./platform_orchestrator/references/constraints.md)
-    - [Workload Profiles](./platform_orchestrator/references/workload_profiles.md)
-      - [Profiles](./platform_orchestrator/references/workload_profiles/profiles.md)
-      - [Features](./platform_orchestrator/references/workload_profiles/features.md)
     - [Placeholders](./platform_orchestrator/references/placeholders.md)
     - [Deployment Sets and Deltas](./platform_orchestrator/references/deployment_sets_and_deltas.md)
     - [Resource Types](./platform_orchestrator/references/resource_types.md)
-
-# Score
-
-- [Score](./score.md)
-  - [Getting started](./score/getting_started.md)
-    - [Hello world](./score/getting_started/hello_world.md)
-    - [Review logs](./score/getting_started/review_logs.md)
-    - [Get DNS](./score/getting_started/get_dns.md)
-    - [Set Shared Values and Secrets](./score/getting_started/set_shared_values_and_secrets.md)
-  - [Working with](./score/working_with.md)
-    - [Workload variables](./score/working_with/workload_variables.md)
-  - [Reference](./score/reference.md)
-    - [Command reference overview](./score/reference/command_reference_overview.md)
-    - [Delta](./score/reference/delta.md)
-    - [Run](./score/reference/run.md)
-  - [Troubleshooting](./score/troubleshooting.md)
 
 # Integrations and Extensions
 
@@ -93,7 +84,15 @@
       - [Virtual Drivers](./integration_and_extensions/drivers/custom_drivers/virtual_drivers.md)
     - [Reference](./integration_and_extensions/drivers/reference.md)
       - [Driver API Specification](./integration_and_extensions/drivers/reference/driver_api_specification.md)
+  - [Workload Profiles](./integration_and_extensions/workload_profiles.md)
+    - [Profiles](./integration_and_extensions/workload_profiles/profiles.md)
+    - [Features](./integration_and_extensions/workload_profiles/features.md)
+  - [CI/CD](./integration_and_extensions/ci_cd.md)
+  - [Webhooks](./integration_and_extensions/webhooks.md)
+# Knowledge base
+- [Knowledge base](./knowledge_base.md)
 
+---
 # Concepts
 
 - [Concepts](./concepts.md)
