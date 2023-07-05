@@ -13,4 +13,4 @@ Score provides a developer-centric and platform-agnostic Workload specification 
 ## Integrations and extensions
 
 With the Humantiec Platform Orchestrator you can integrate with your favorite platforms or developer portals.
-For example, you can deploy changes to your favorite CI pipeline and the Platfrom Orchestrator will pickup the latest changes and push through the environment of your choice. This is the introduction to the book.
+For example, you can deploy changes to your favorite CI pipeline and the Humanitec Platform Orchestrator will pickup the latest changes and push through the environment of your choice.
