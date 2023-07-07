@@ -14,21 +14,21 @@ gh repo clone humanitec/reference-architecture-aws
 ```
 
 1. Review the variables defined in `variables.tf` files for each build to understand what inputs are required.
-You can provide these variables through one of the following options.
+   You can provide these variables through one of the following options.
    1. Command line flags when running Terraform a `terraform.tfvars` file in the same directory
    2. Environment variables:
-        Choose a build in the builds/ directory to deploy.
-        For example, some options are:
-        - `aws_static_base`: Deploys core networking infrastructure (VPC, subnets, route tables, etc.)
-        - `aws_eks`: Deploys an EKS cluster and node group
-        - `aws_rds`: Deploys an RDS database instance
-        - `aws_s3`: Deploys an S3 bucket
+      Choose a build in the builds/ directory to deploy.
+      For example, some options are:
+      - `aws_static_base`: Deploys core networking infrastructure (VPC, subnets, route tables, etc.)
+      - `aws_eks`: Deploys an EKS cluster and node group
+      - `aws_rds`: Deploys an RDS database instance
+      - `aws_s3`: Deploys an S3 bucket
 
 1. Run `terraform init` to initialize the build.
 
-2. Run `terraform plan` to preview the changes. Review the output to ensure the configuration is correct.
+1. Run `terraform plan` to preview the changes. Review the output to ensure the configuration is correct.
 
-3. Run `terraform apply` to deploy the infrastructure. Enter `yes` when prompted to confirm.
+1. Run `terraform apply` to deploy the infrastructure. Enter `yes` when prompted to confirm.
 
 The infrastructure will now deploy. This can take 10-15 minutes for larger builds like `aws_eks`.
 

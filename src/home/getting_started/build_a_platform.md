@@ -12,7 +12,6 @@ The Humanitec Platform Orchestrator works as a deployment engine that enables pl
 
 We offer multiple ways to work with the Humanitec Platform Orchestator.
 
-
 You can use the Humanitec Platform Orchestrator UI, API, or CLI to manage your applications, environments, deployments, and more.
 
 In somecases, a Terraform provider is also available.

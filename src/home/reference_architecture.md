@@ -1,6 +1,5 @@
 # Reference architecture
 
-
 This repository contains Terraform configurations to deploy a reference architecture on AWS, GCP, and Azure.
 
 The goal of this repository is to provide a starting point for deploying infrastructure on AWS, GCP, and Azure.
