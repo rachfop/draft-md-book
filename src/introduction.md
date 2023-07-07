@@ -2,14 +2,14 @@
 
 Build your enterprise-grade Internal Developer Platform with the Humanitec Platform Orchestrator and Score.
 
-## What is it?
+### What is it?
 
 The Humanitec Platform Orchestrator is a set of interfaces (Web UI, CLI, API) which enables Platform Engineering teams to remove bottlenecks by letting them build golden paths for developers.
 Platform Engineering teams leverage the Humanitec Platform Orchestrator to provide a self-service model for developers to deploy their applications to the cloud.
 
 The Platform Orchestrator uses _dynamic configuration_ and _declarative infrastructure_ which enables developers to deploy their applications to any environment without having to change their configuration.
 
-## Key features
+### Key features
 
 The Humanitec Platform Orchestrator provides a set of features that enable Platform Engineering teams to build golden paths for developers.
 
@@ -33,7 +33,7 @@ To achieve this, a developer might use [Score](#score), to declare their workloa
 
 With the Humanitec Platform Orchestrator, Platform Engineering teams can ensure standardization across every deployment provisioned by the platform.
 
-### Integrations and extensions
+## Integrations and extensions
 
 Integrate with your favorite developer tools to provide a self-service model for developers to deploy their applications to the cloud.
 
