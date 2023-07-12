@@ -24,12 +24,12 @@ Such features include:
 
 Developers create a request to build their applications, and the Humanitec Platform Orchestrator pushes the changes through each environment, with the help of _Drivers_.
 Platform Engineering teams define how resources are provisioned with Resource Definitions.
-To achieve this, a developer might use [Score](#score), to declare their workload requirements and the Humanitec Platform Orchestrator responds by:
+To achieve this, a developer might use the workload specification [Score](#score), to define how their workload should run and the Humanitec Platform Orchestrator responds by:
 
 1. Determining the required resources with dynamic configuration.
 2. Using Drivers to create, update, or delete the required resources based on Resource Definitions.
 3. Injecting the required configuration and secrets into the applications.
-4. Provisioning the application and running the final deployment.
+4. Provisioning the resources and running the final deployment.
 
 With the Humanitec Platform Orchestrator, Platform Engineering teams can ensure standardization across every deployment provisioned by the platform.
 
@@ -49,7 +49,7 @@ By utilizing Drivers and specifying appropriate resource definitions, you can ea
 
 ## Score
 
-Score provides a developer-centric and platform-agnostic Workload specification to improve developer productivity and experience. Score eliminates configuration management between local and remote environments.
+The workload specification Score provides a developer-centric and platform-agnostic Workload specification to improve developer productivity and experience. Score eliminates configuration management between local and remote environments.
 
 ### What is it?
 
