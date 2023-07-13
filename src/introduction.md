@@ -5,31 +5,42 @@ Build your enterprise-grade Internal Developer Platform with the Humanitec Platf
 ### What is it?
 
 The Humanitec Platform Orchestrator is a set of interfaces (Web UI, CLI, API) which enables Platform Engineering teams to remove bottlenecks by letting them build golden paths for developers.
-Platform Engineering teams leverage the Humanitec Platform Orchestrator to provide a self-service model for developers to deploy their applications to the cloud.
 
-The Platform Orchestrator uses _dynamic configuration_ and _declarative infrastructure_ which enables developers to deploy their applications to any environment without having to change their configuration.
+- Platform Engineering teams leverage the Humanitec Platform Orchestrator to provide a self-service model for developers to deploy their applications to the cloud.
+
+- Developers use the workload specification [Score](./score.md) to generate the necessary configuration to deploy an application. The Humanitec Platform Orchestrator handles the infrastructure provisioning and deployment, defined by the Platform Engineering team, freeing up developers to focus on their applications.
 
 ### Key features
 
-The Humanitec Platform Orchestrator provides a set of features that enable Platform Engineering teams to build golden paths for developers.
+Key features of the Humanitec Platform Orchestrator include:
 
-Such features include:
+- Generates application and infrastructure configurations from workload specifications.
+- Executes deployments and manage the lifecycle of resources.
+- Integrates with adjacent tools like image registries, secrets managers, and CI/CD tools.
+- Provisions resources through Drivers.
+- Creates dynamic environments and deploy to them.
+- Diffs, rolls back, debugs, inspect deployments.
+- Promotes deployments between environments.
+- Spins up new environments.
 
+<!--
 - **Application management**: Manage your applications, environments, deployments, and more.
 - **Deployment engine**: Deploy your applications to any environment without having to change your configuration.
 - **Self-service model**: Provide a self-service model for developers to deploy their applications to the cloud.
 - **Dynamic configuration**: Leverage dynamic configuration to enable developers to deploy their applications to any environment without having to change their configuration.
+-->
 
 ### How does it work?
 
-Developers create a request to build their applications, and the Humanitec Platform Orchestrator pushes the changes through each environment, with the help of _Drivers_.
-Platform Engineering teams define how resources are provisioned with Resource Definitions.
-To achieve this, a developer might use the workload specification [Score](#score), to define how their workload should run and the Humanitec Platform Orchestrator responds by:
+Developers create a request to build their applications, and the Humanitec Platform Orchestrator pushes the changes through each environment, with the help of _Resource Definitions_ and _Drivers_. A request can be a `git push` to a code repository like, GitHub, GitLab, or Bitbucket.
 
-1. Determining the required resources with dynamic configuration.
-2. Using Drivers to create, update, or delete the required resources based on Resource Definitions.
-3. Injecting the required configuration and secrets into the applications.
-4. Provisioning the resources and running the final deployment.
+The Platform Orchestrator receives the request and looks at the workload specification (like Score) in the code repository to determine what resources the application needs. It then finds the resource definitions, with Resource Matching, that match those resource types and the current environment. These resource definitions specify which driver to use for provisioning each resource.
+
+The Platform Orchestrator calls the necessary drivers and passes them the configuration from the resource definitions. The drivers then provision the resources by calling APIs, using IaC tools, or other means.
+
+Once the resources are provisioned, the Platform Orchestrator deploys the application code to the environment. It continues promoting the application through each environment, re-provisioning resources at each step based on the environment-specific resource definitions.
+
+The Platform Orchestrator also handles ongoing management of environments, resources and deployments. It provides an API, CLI and UI to monitor the status of environments, deployments, and resources, manage resource definitions, revert deployments, create new environments, and more.
 
 With the Humanitec Platform Orchestrator, Platform Engineering teams can ensure standardization across every deployment provisioned by the platform.
 
@@ -37,15 +48,24 @@ With the Humanitec Platform Orchestrator, Platform Engineering teams can ensure 
 
 Integrate with your favorite developer tools to provide a self-service model for developers to deploy their applications to the cloud.
 
-The Humanitec Platform Orchestrator supports a variety of extensions in the form of Drivers. Drivers are HTTP Web Services that implement the [Humanitec Driver API](https://developer.humanitec.com/drivers/reference/api-spec/), serving as the underlying code that runs to provision resources. They're crucial for integrating the Orchestrator with various other systems and services, as they perform operations and changes to the infrastructure.
+_Resource definitions_ tell the Platform Orchestrator how to resolve the abstract request from the workload specification (Score, for instance) to the correct _Driver_. This configuration can be done through the UI, API, CLI or the Terraform Provider (in beta).
 
-Depending on their implementation, Drivers' behavior can range from simple to complex. For instance, the static Driver merely returns pre-canned values with no side-effects, whereas the Terraform Driver executes Terraform, returns outputs from Terraform, and usually leads to infrastructure being created, updated, or destroyed.
+Resource definitions define how a particular resource type should be provisioned in a given context. They contain:
 
-Platform Engineering teams leverage Drivers in Resource Definitions, which outline how resources are provisioned. In essence, Drivers are responsible for creating, updating, and deleting resources based on a unique ID and producing outputs that can are injected into Workloads or referenced in other Resource Definitions.
+- The resource type they apply to (e.g. postgres, aws-s3-bucket).
+- Matching criteria to determine in which contexts they should be used (e.g. env_type: "production").
+- Driver configuration detailing how the resource should be provisioned (e.g. AWS credentials, Docker image to use).
+- Optionally, default values for the resource.
 
-An essential part of the Resource Definitions is Driver Inputs. These are the specific parameters passed to the Resource Driver that performs the provisioning of a resource. The schema of the Driver Inputs depends on the particular Driver. For instance, provisioning a DNS resource with the `humanitec/dns-cloudflare` Driver necessitates the Cloudflare Zone ID and the parent domain to be specified. In contrast, the `humanitec/dns-wildcard` Driver only requires the parent domain.
+When the Platform Orchestrator needs to provision a resource, it will:
 
-By utilizing Drivers and specifying appropriate resource definitions, you can easily extend and customize the capabilities of the Humanitec Platform Orchestrator to suit your needs and integrate with the tools and platforms you are already using.
+1. Look at the resource type requested (e.g. postgres)
+2. Find all resource definitions matching that type
+3. Filter those to find the best match for the current context (using the _Matching Criteria_)
+4. Use the selected resource definition to determine which Driver to use and how to configure it
+5. Provision the resource through the Driver, using any default values from the definition and values provided for the specific resource request.
+
+Resource definitions define how resources should be created in a standardized way, and Drivers implement that provisioning through various tools and APIs. The Humanitec Platform Orchestrator brings these together to provision resources based on workload specification Score.
 
 ## Score
 

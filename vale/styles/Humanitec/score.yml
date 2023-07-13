@@ -1,0 +1,10 @@
+extends: conditional
+message: "Please use 'Score a workload specification' on first mention before using 'Score' by itself"
+level: warning
+scope: text
+ignorecase: false
+# Ensures that the first use of 'Score' is as 'Score a workload specification'
+first: '\bScore a workload specification\b'
+second: '\bScore\b'
+# ... with no exceptions
+exceptions: []

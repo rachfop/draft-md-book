@@ -1,6 +1,6 @@
 # Use a platform
 
-Developers use Score to deploy their applications to their Internal Developer Platform.
+Developers use Score a workload specification, to deploy their applications to their Internal Developer Platform.
 The Humanitec Platform Orchestrator then takes care of the rest.
 
 ## Why use an Internal Developer Platform?
@@ -12,10 +12,6 @@ Developers can deploy their applications to the cloud using the Humanitec Platfo
 This helps speed up development and deployment cycles and enables developers to focus on what they do best: writing code.
 
 ## What does the platform look like?
-
-The Humanitec Platform Orchestrator is a cloud-native application that runs on Kubernetes.
-
-Kubernetes is an open-source container orchestration platform that enables developers to deploy their applications to the cloud and nortiously difficult to manage.
 
 With Score and the Humanitec Platform Orchestrator, you can deploy your applications with a `git push` and allow your Platform Engineering team to manage the underlying infrastructure.
 
