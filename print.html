@@ -1,0 +1,493 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Developers</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="home/getting_started.html"><strong aria-hidden="true">2.</strong> Getting started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="home/getting_started/build_a_platform.html"><strong aria-hidden="true">2.1.</strong> Build a platform</a></li><li class="chapter-item "><a href="home/getting_started/use_a_platform.html"><strong aria-hidden="true">2.2.</strong> Use a platform</a></li><li class="chapter-item "><a href="home/tutorials.html"><strong aria-hidden="true">2.3.</strong> Tutorials</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="home/tutorials/deploy_your_first_application.html"><strong aria-hidden="true">2.3.1.</strong> Deploy your first application</a></li><li class="chapter-item "><a href="home/tutorials/migrate_your_application.html"><strong aria-hidden="true">2.3.2.</strong> Migrate your application</a></li><li class="chapter-item "><a href="home/tutorials/build_production_ready_applications.html"><strong aria-hidden="true">2.3.3.</strong> Build production ready applications</a></li></ol></li><li class="chapter-item "><a href="home/reference_architecture.html"><strong aria-hidden="true">2.4.</strong> Reference architecture</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="home/reference_architecture/aws.html"><strong aria-hidden="true">2.4.1.</strong> AWS</a></li><li class="chapter-item "><a href="home/reference_architecture/azure.html"><strong aria-hidden="true">2.4.2.</strong> Azure</a></li><li class="chapter-item "><a href="home/reference_architecture/gcp.html"><strong aria-hidden="true">2.4.3.</strong> GCP</a></li><li class="spacer"></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Score</li><li class="chapter-item expanded "><a href="score.html"><strong aria-hidden="true">3.</strong> Score</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="score/getting_started.html"><strong aria-hidden="true">3.1.</strong> Getting started</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="score/getting_started/hello_world.html"><strong aria-hidden="true">3.1.1.</strong> Hello world</a></li><li class="chapter-item "><a href="score/getting_started/review_logs.html"><strong aria-hidden="true">3.1.2.</strong> Review logs</a></li><li class="chapter-item "><a href="score/getting_started/get_dns.html"><strong aria-hidden="true">3.1.3.</strong> Get DNS</a></li><li class="chapter-item "><a href="score/getting_started/set_shared_values_and_secrets.html"><strong aria-hidden="true">3.1.4.</strong> Set Shared Values and Secrets</a></li></ol></li><li class="chapter-item "><a href="score/working_with.html"><strong aria-hidden="true">3.2.</strong> Working with</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="score/working_with/workload_variables.html"><strong aria-hidden="true">3.2.1.</strong> Workload variables</a></li></ol></li><li class="chapter-item "><a href="score/reference.html"><strong aria-hidden="true">3.3.</strong> Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="score/reference/command_reference_overview.html"><strong aria-hidden="true">3.3.1.</strong> Command reference overview</a></li><li class="chapter-item "><a href="score/reference/delta.html"><strong aria-hidden="true">3.3.2.</strong> Delta</a></li><li class="chapter-item "><a href="score/reference/run.html"><strong aria-hidden="true">3.3.3.</strong> Run</a></li></ol></li><li class="chapter-item "><a href="score/troubleshooting.html"><strong aria-hidden="true">3.4.</strong> Troubleshooting</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Platform Orchestrator</li><li class="chapter-item expanded "><a href="platform_orchestrator.html"><strong aria-hidden="true">4.</strong> Platform Orchestrator</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform_orchestrator/working_with.html"><strong aria-hidden="true">4.1.</strong> Working with</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform_orchestrator/working_with/applications.html"><strong aria-hidden="true">4.1.1.</strong> Applications</a></li><li class="chapter-item "><a href="platform_orchestrator/working_with/deployments.html"><strong aria-hidden="true">4.1.2.</strong> Deployments</a></li><li class="chapter-item "><a href="platform_orchestrator/working_with/environments.html"><strong aria-hidden="true">4.1.3.</strong> Environments</a></li><li class="chapter-item "><a href="platform_orchestrator/working_with/sets_and_deltas.html"><strong aria-hidden="true">4.1.4.</strong> Sets and Deltas</a></li><li class="chapter-item "><a href="platform_orchestrator/working_with/workloads.html"><strong aria-hidden="true">4.1.5.</strong> Workloads</a></li><li class="chapter-item "><a href="platform_orchestrator/working_with/shared_values.html"><strong aria-hidden="true">4.1.6.</strong> Shared Values</a></li></ol></li><li class="chapter-item "><a href="platform_orchestrator/resources.html"><strong aria-hidden="true">4.2.</strong> Resources</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform_orchestrator/resources/overview.html"><strong aria-hidden="true">4.2.1.</strong> Overview</a></li><li class="chapter-item "><a href="platform_orchestrator/resources/dependent_resources.html"><strong aria-hidden="true">4.2.2.</strong> Dependent Resources</a></li><li class="chapter-item "><a href="platform_orchestrator/resources/active_resources.html"><strong aria-hidden="true">4.2.3.</strong> Active Resources</a></li><li class="chapter-item "><a href="platform_orchestrator/resources/resource_definitions.html"><strong aria-hidden="true">4.2.4.</strong> Resource Definitions</a></li><li class="chapter-item "><a href="platform_orchestrator/resources/resource_graph.html"><strong aria-hidden="true">4.2.5.</strong> Resource Graph</a></li></ol></li><li class="chapter-item "><a href="platform_orchestrator/security.html"><strong aria-hidden="true">4.3.</strong> Security</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform_orchestrator/security/authentication.html"><strong aria-hidden="true">4.3.1.</strong> Authentication</a></li><li class="chapter-item "><a href="platform_orchestrator/security/rbac.html"><strong aria-hidden="true">4.3.2.</strong> RBAC</a></li></ol></li><li class="chapter-item "><a href="platform_orchestrator/references.html"><strong aria-hidden="true">4.4.</strong> References</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="platform_orchestrator/references/api_reference.html"><strong aria-hidden="true">4.4.1.</strong> API Reference</a></li><li class="chapter-item "><a href="platform_orchestrator/references/cli_reference.html"><strong aria-hidden="true">4.4.2.</strong> CLI Reference</a></li><li class="chapter-item "><a href="platform_orchestrator/references/constraints.html"><strong aria-hidden="true">4.4.3.</strong> Constraints</a></li><li class="chapter-item "><a href="platform_orchestrator/references/placeholders.html"><strong aria-hidden="true">4.4.4.</strong> Placeholders</a></li><li class="chapter-item "><a href="platform_orchestrator/references/deployment_sets_and_deltas.html"><strong aria-hidden="true">4.4.5.</strong> Deployment Sets and Deltas</a></li><li class="chapter-item "><a href="platform_orchestrator/references/resource_types.html"><strong aria-hidden="true">4.4.6.</strong> Resource Types</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">Integrations and Extensions</li><li class="chapter-item expanded "><a href="integration_and_extensions.html"><strong aria-hidden="true">5.</strong> Integration and extensions</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="integration_and_extensions/drivers.html"><strong aria-hidden="true">5.1.</strong> Drivers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers.html"><strong aria-hidden="true">5.1.1.</strong> Humanitec Drivers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/aws_route53.html"><strong aria-hidden="true">5.1.1.1.</strong> AWS Route53</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/cloudflare.html"><strong aria-hidden="true">5.1.1.2.</strong> Cloudflare</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/cluster.html"><strong aria-hidden="true">5.1.1.3.</strong> Cluster</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/horizontal_pod_autoscaler.html"><strong aria-hidden="true">5.1.1.4.</strong> Horizontal Pod Autoscaler</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/ingress.html"><strong aria-hidden="true">5.1.1.5.</strong> Ingress</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/mariadb.html"><strong aria-hidden="true">5.1.1.6.</strong> MariaDB</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/mysql.html"><strong aria-hidden="true">5.1.1.7.</strong> MySQL</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/postgresql.html"><strong aria-hidden="true">5.1.1.8.</strong> PostgreSQL</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/static.html"><strong aria-hidden="true">5.1.1.9.</strong> Static</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/template.html"><strong aria-hidden="true">5.1.1.10.</strong> Template</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/terraform.html"><strong aria-hidden="true">5.1.1.11.</strong> Terraform</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/volume_nfs.html"><strong aria-hidden="true">5.1.1.12.</strong> Volume NFS</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/volume_pvc.html"><strong aria-hidden="true">5.1.1.13.</strong> Volume PVC</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/humanitec_drivers/wildcard.html"><strong aria-hidden="true">5.1.1.14.</strong> WildCard</a></li></ol></li><li class="chapter-item "><a href="integration_and_extensions/drivers/custom_drivers.html"><strong aria-hidden="true">5.1.2.</strong> Custom Drivers</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="integration_and_extensions/drivers/custom_drivers/manage_custom_drivers.html"><strong aria-hidden="true">5.1.2.1.</strong> Manage Custom Drivers</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/custom_drivers/register_custom_drivers.html"><strong aria-hidden="true">5.1.2.2.</strong> Register Custom Drivers</a></li><li class="chapter-item "><a href="integration_and_extensions/drivers/custom_drivers/virtual_drivers.html"><strong aria-hidden="true">5.1.2.3.</strong> Virtual Drivers</a></li></ol></li><li class="chapter-item "><a href="integration_and_extensions/drivers/reference.html"><strong aria-hidden="true">5.1.3.</strong> Reference</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="integration_and_extensions/drivers/reference/driver_api_specification.html"><strong aria-hidden="true">5.1.3.1.</strong> Driver API Specification</a></li></ol></li></ol></li><li class="chapter-item "><a href="integration_and_extensions/workload_profiles.html"><strong aria-hidden="true">5.2.</strong> Workload Profiles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="integration_and_extensions/workload_profiles/profiles.html"><strong aria-hidden="true">5.2.1.</strong> Profiles</a></li><li class="chapter-item "><a href="integration_and_extensions/workload_profiles/features.html"><strong aria-hidden="true">5.2.2.</strong> Features</a></li></ol></li><li class="chapter-item "><a href="integration_and_extensions/ci_cd.html"><strong aria-hidden="true">5.3.</strong> CI/CD</a></li><li class="chapter-item "><a href="integration_and_extensions/webhooks.html"><strong aria-hidden="true">5.4.</strong> Webhooks</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Knowledge base</li><li class="chapter-item expanded "><a href="knowledge_base.html"><strong aria-hidden="true">6.</strong> Knowledge base</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="concepts.html"><strong aria-hidden="true">7.</strong> Concepts</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="concepts/applications.html"><strong aria-hidden="true">7.1.</strong> Applications</a></li><li class="chapter-item "><a href="concepts/dynamic_configuration_management.html"><strong aria-hidden="true">7.2.</strong> Dynamic Configuration Management</a></li><li class="chapter-item "><a href="concepts/environments.html"><strong aria-hidden="true">7.3.</strong> Environments</a></li><li class="chapter-item "><a href="concepts/organizations.html"><strong aria-hidden="true">7.4.</strong> Organizations</a></li></ol></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">8.</strong> Glossary</a></li><li class="chapter-item expanded "><a href="home/tutorials.html"><strong aria-hidden="true">9.</strong> Tutorials</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Support</li><li class="chapter-item expanded "><a href="support/troubleshooting.html"><strong aria-hidden="true">10.</strong> Troubleshooting</a></li><li class="chapter-item expanded "><a href="support/faq.html"><strong aria-hidden="true">11.</strong> FAQ</a></li><li class="chapter-item expanded "><a href="support/contact.html"><strong aria-hidden="true">12.</strong> Contact</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Developers</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>The Humanitec Platform Orchestrator powers your Internal Developer Platform (IDP) by removing infrastructure bottlenecks and creating golden paths for developers. It does this by enabling developers to request the workloads and resources needed for their application code. The platform team then responds by defining how those resources will be provisioned with the Platform Orchestrator.</p>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>This introduction provides an overview of how the Platform Orchestrator works within the context of your IDP:</p>
+<h3 id="score"><a class="header" href="#score">Score</a></h3>
+<p>Developers use a Workload Specification, known as Score, to describe resources needed to run their application code.
+When a developer pushes a change to their code repository, the CI/CD pipeline notifies the Platform Orchestrator of the request to provision resources.</p>
+<p>For information on how to connect an existing CI/CD pipeline to notify the Platform Orchestrator, see CI/CD.</p>
+<h3 id="the-humanitec-platform-orchestrator"><a class="header" href="#the-humanitec-platform-orchestrator">The Humanitec Platform Orchestrator</a></h3>
+<p>The Humanitec Platform Orchestrator bridges the gap between developers' application code and the infrastructure used to run it.</p>
+<p>When the Platform Orchestrator receives a request for Resources, it matches the request to the baseline configuration designed by the platform team.
+For example, if a developer requests a Postgres resource with the Environment name of <code>developement</code>, the Platform Orchestrator acknowledges the request and matches the Postgres resource to what’s defined in the Resource Definition. This could include additional Resource Dependencies, such as routes or DNS.</p>
+<p>Drivers implement the provisioning of Resource Definitions by either a create, update, or delete action when developers push updates to their Workload.</p>
+<p>For more information on Resources, see Resource Definition Overview.
+For more information on Drivers, see Drivers, Custom Drivers, or Built-in Drivers.</p>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>Developers define their workload and resource dependencies in a Score file.
+Platform teams define how resources are provisioned, with Resource Definitions and matching criteria to specify where to apply the Resources.</p>
+<p>The Humanitec Platform Orchestrator removes friction by connecting developer infrastructure needs through an automated provisioning process. This allows developers to focus on writing code rather than configuring for each deployment.</p>
+<h2 id="next-steps"><a class="header" href="#next-steps">Next steps</a></h2>
+<p>If you’re part of a platform team and interested in powering your IDP with the Humanitec Platform Orchestrator, see what it’s like to build a platform.
+If you’re a developer interested in how the Platform Orchestrator works, get started by using a platform.
+To understand more about application deployment, head to our tutorial Deploy your Application.
+For more info on the Humanitec Platform Orchestrator, check out our Concepts and Philosophy section.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h1>
+<p>Getting started with the Humanitec Platform Orchestrator depends on your role or what you want to accomplish.</p>
+<h2 id="build-a-platform"><a class="header" href="#build-a-platform">Build a platform</a></h2>
+<p>If you are building a platform, which includes:</p>
+<ul>
+<li>Connecting CI pipelines</li>
+<li>Connecting Kubernetes clusters</li>
+<li>Connecting databases</li>
+</ul>
+<p>See the documentation on <a href="home/./getting_started/build_a_platform.html">Building a platform</a>.</p>
+<h2 id="use-a-platform"><a class="header" href="#use-a-platform">Use a platform</a></h2>
+<p>If you are using the platform, which includes:</p>
+<ul>
+<li>Deploying applications</li>
+<li>Deploying workloads</li>
+<li>Specifying environments</li>
+</ul>
+<p>See the documentation on <a href="home/./getting_started/use_a_platform.html">Using a platform</a>.</p>
+<h2 id="tutorials"><a class="header" href="#tutorials">Tutorials</a></h2>
+<p>Tutorials help you get started building or using the Humanitec Platform Orchestrator and Score.</p>
+<p>The following tutorials are available:</p>
+<h2 id="reference-architecture"><a class="header" href="#reference-architecture">Reference architecture</a></h2>
+<p>Alternatively, you can leverage the Reference architecture to quickly build the infrastructure for your Internal Developer Platform with the Humanitec Platform Orchestrator.</p>
+<p>Reference architecture is available for the following platforms:</p>
+<ul>
+<li><a href="home/./reference_architecture/aws.html">AWS</a></li>
+<li><a href="home/./reference_architecture/azure.html">Azure</a></li>
+<li><a href="home/./reference_architecture/gcp.html">GCP</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="build-a-platform-1"><a class="header" href="#build-a-platform-1">Build a platform</a></h1>
+<p>Platform Engineers build their Internal Developer Platforms (IDP) by leveraging the Humanitec Platform Orchestrator and Score.</p>
+<h2 id="why-build-an-internal-developer-platform-with-humanitec"><a class="header" href="#why-build-an-internal-developer-platform-with-humanitec">Why build an Internal Developer Platform with Humanitec?</a></h2>
+<p>Humanitec provides a platform-agnostic workload specification called Score. Score eliminates configuration management between local and remote environments, meaning, developers can deploy their applications to any environment without having to change their configuration.</p>
+<p>The Humanitec Platform Orchestrator works as a deployment engine that enables Platform Engineering teams to build golden paths for developers. This means that Platform Engineering teams can build a self-service model for developers to deploy their applications to the cloud and developers can deploy their applications without having to wait for the Platform Engineering teams to do it for them.</p>
+<h2 id="what-does-the-platform-look-like"><a class="header" href="#what-does-the-platform-look-like">What does the Platform look like?</a></h2>
+<p>We offer multiple ways to work with the Humanitec Platform Orchestrator.</p>
+<p>You can use the Humanitec Platform Orchestrator UI, API, or CLI to manage your applications, environments, deployments, and more.</p>
+<p>In some cases, a Terraform provider is also available.</p>
+<h2 id="how-does-it-work"><a class="header" href="#how-does-it-work">How does it work?</a></h2>
+<p>The Humanitec Platform Orchestrator allows you to configure and ship confidently, independently, and fast by providing a self-service model for developers to deploy their applications to the cloud.</p>
+<p>Inform the Humanitec Platform Orchestrator that your applications are ready to deploy by connecting your CI pipeline to the Humanitec Platform Orchestrator.</p>
+<p>For example, when a developer pushes code changes out to GitHub, the CI pipeline will build the application and push it to a container registry.</p>
+<p>Because the Humanitec Platform Orchestrator applies the approach of <em>dynamic configuration management</em> your application and infrastructure configurations are generated with by applying abstract requests, known as <em>workload specifications</em> to baseline configurations provided by the platform engineering team.</p>
+<h2 id="next-steps-1"><a class="header" href="#next-steps-1">Next steps</a></h2>
+<p>Gain access to the Humanitec Platform Orchestrator by creating an Organization and connect your infrastructure to start building.</p>
+<h3 id="gaining-access"><a class="header" href="#gaining-access">Gaining access</a></h3>
+<p>An Organization Administrator or Manager can invite new users to join an existing Organization in Humanitec. An invitation involves sending an email that contains a one-time link that the invited User can follow to associate either their GitHub or Google Account with the Organization in Humanitec. The link expires after 7 days. If the link has expired before a User has accepted the invite, a new invite can be sent.</p>
+<p>Users can be invited to an existing Organization from the Organization Settings.</p>
+<ol>
+<li>Select <strong>Organization settings</strong> from the Organization menu.</li>
+<li>In Organization Settings, select the <strong>Organization members</strong> tab.</li>
+<li>Add the email address of the User to invite in the <strong>Email</strong> text box on the left hand side.</li>
+<li>Select a role for the User to invite from the <strong>Role</strong> dropdown on the right hand side. Be aware that you will only have the option to invite Administrators to your Organization if you are an Administrator yourself.</li>
+<li>To invite a user, select <strong>Send invite</strong>.</li>
+</ol>
+<!--
+For more information, see [Organization Roles]({{< relref "/platform-orchestrator/security/rbac" >}}).
+-->
+<h3 id="connect-your-infrastructure"><a class="header" href="#connect-your-infrastructure">Connect your infrastructure</a></h3>
+<p>You can connect your infrastructure in many ways.</p>
+<p>The easiest way to get started it to let the Humanitec know that your applications are ready to deploy, by connecting your CI pipeline to the Humanitec Platform Orchestrator.</p>
+<ul>
+<li>Connnect CI</li>
+<li>K8 cluster</li>
+<li>Database</li>
+</ul>
+<h4 id="reference-architecture-1"><a class="header" href="#reference-architecture-1">Reference architecture</a></h4>
+<p><strong>Coming soon</strong></p>
+<p>Alternatively, you can leverage the Reference architecture to quickly build the infrastructure for your Internal Developer Platform with the Humanitec Platform Orchestrator.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="use-a-platform-1"><a class="header" href="#use-a-platform-1">Use a platform</a></h1>
+<p>Developers use Score a workload specification, to deploy their applications to their Internal Developer Platform.
+The Humanitec Platform Orchestrator then takes care of the rest.</p>
+<h2 id="why-use-an-internal-developer-platform"><a class="header" href="#why-use-an-internal-developer-platform">Why use an Internal Developer Platform?</a></h2>
+<p>Internal Developer Platforms (IDP) enable developers to deploy their applications to the cloud without having to wait for the Platform Engineering team to do it for them.</p>
+<p>Developers can deploy their applications to the cloud using the Humanitec Platform Orchestrator without having to know the underlying infrastructure.</p>
+<p>This helps speed up development and deployment cycles and enables developers to focus on what they do best: writing code.</p>
+<h2 id="what-does-the-platform-look-like-1"><a class="header" href="#what-does-the-platform-look-like-1">What does the platform look like?</a></h2>
+<p>With Score and the Humanitec Platform Orchestrator, you can deploy your applications with a <code>git push</code> and allow your Platform Engineering team to manage the underlying infrastructure.</p>
+<h2 id="how-does-it-work-1"><a class="header" href="#how-does-it-work-1">How does it work?</a></h2>
+<p>Score simplifies the management of infrastructure, by relying on <em>dynamic configuration management</em>.</p>
+<p>With Score, declare your resources, such as databases, queues, and caches, as abstract requests, known as <em>workload specifications</em> and the Humanitec Platform Orchestrator will generate the configuration for you.</p>
+<p>The Humanitec Platform Orchestrator simplifies the management of infrastructure by relying on <em>dynamic configuration management</em>. With this, you can declare your resources, such as databases, queues, and caches, as abstract requests, known as <em>workload specifications</em>, and the Humanitec Platform Orchestrator will generate the configuration for you.</p>
+<p>The Orchestrator uses Drivers to implement the platform and to create or update infrastructure resources. These Drivers, which can be built-in or custom, establish connections to your infrastructure and can be used to connect to different cloud providers such as AWS, Google Cloud, and Azure. They fulfill a Driver Interface that allows the Orchestrator to create and destroy resources as required by deployments. Drivers typically call APIs associated with managed services using the credentials provided by resource accounts.</p>
+<p>Resource accounts are identities used to provision and manage resources through dynamic resource definitions. They can represent a range of identities, including cloud provider service accounts, VPN accounts, SSH accounts, and other credentials.</p>
+<h2 id="next-steps-2"><a class="header" href="#next-steps-2">Next steps?</a></h2>
+<p>Your Platform Engineering team should have already built a platform with the Humanitec Platform Orchestrator.</p>
+<p>Get access to your team's organization and start deploying your applications to the cloud.</p>
+<h3 id="gaining-access-1"><a class="header" href="#gaining-access-1">Gaining access</a></h3>
+<p>You should be invited by your organization and have credentials through Single Sign-on (SSO).
+Check your email or reach out to your Platform Engineering team for more information.</p>
+<h3 id="developing-apps-and-workloads-with-humanitec"><a class="header" href="#developing-apps-and-workloads-with-humanitec">Developing Apps and Workloads with Humanitec</a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tutorials-1"><a class="header" href="#tutorials-1">Tutorials</a></h1>
+<p>Tutorials help you get started building or using the Humanitec Platform Orchestrator and Score.</p>
+<p>The following tutorials are available:</p>
+<ul>
+<li><a href="home/./home/tutorials/deploy_your_first_application.html">Deploy your first application</a></li>
+<li><a href="home/./home/tutorials/migrate_your_application.html">Migrate your application</a></li>
+<li><a href="home/./home/tutorials/build_production_ready_applications.html">Build production ready applications</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="deploy-your-first-application"><a class="header" href="#deploy-your-first-application">Deploy your first application</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="migrate-your-application"><a class="header" href="#migrate-your-application">Migrate your application</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="build-production-ready-applications"><a class="header" href="#build-production-ready-applications">Build production ready applications</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reference-architecture-2"><a class="header" href="#reference-architecture-2">Reference architecture</a></h1>
+<p>This repository contains Terraform configurations to deploy a reference architecture on AWS, GCP, and Azure.</p>
+<p>The goal of this repository is to provide a starting point for deploying infrastructure on AWS, GCP, and Azure.</p>
+<p>The reference architecture includes:</p>
+<ul>
+<li>Virtual Private Cloud (VPC)</li>
+<li>Subnets (public, private, database)</li>
+<li>Route tables</li>
+<li>Kubernetes Engine (EKS, GKE, AKS)</li>
+<li>Node Groups (Auto Scaling Groups, Instance Groups, Node Pools)</li>
+<li>Relational Database Service (RDS, Cloud SQL, Azure Database)</li>
+<li>Object Storage (S3, Google Cloud Storage, Azure Blob Storage)</li>
+<li>Identity and Access Management (IAM, Cloud IAM, Azure Active Directory)</li>
+</ul>
+<p>The infrastructure is deployed using Terraform modules to keep the configurations DRY (Don't Repeat Yourself). The modules can be reused and reconfigured as needed to suit your needs.</p>
+<p>The repository also includes wrapper modules that call the underlying modules with default configuration to make deployment easy. Just populate the required variables to get started.</p>
+<p>This reference architecture can be used as a starting point for your AWS, GCP, and Azure infrastructure needs and built upon as required for your specific use cases. The modules can be used as is or modified to suit your needs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="aws"><a class="header" href="#aws">AWS</a></h1>
+<p>The <a href="https://github.com/humanitec/reference-architecture-aws">Humanitec AWS Reference Architecture</a> is a set of Terraform configurations that can be used to deploy a reference architecture on AWS.
+The Reference Architecture provides a tested and proven architecture that can be used as a starting point. This saves time designing and accelerates deployment, since it provides a common framework and is modular.</p>
+<h2 id="get-started"><a class="header" href="#get-started">Get started</a></h2>
+<p>Get started with the Humanitec AWS Reference Architecture:</p>
+<ol>
+<li>Clone the repository.</li>
+</ol>
+<pre><code class="language-bash">gh repo clone humanitec/reference-architecture-aws
+</code></pre>
+<ol>
+<li>
+<p>Review the variables defined in <code>variables.tf</code> files for each build to understand what inputs are required.
+You can provide these variables through one of the following options.</p>
+<ol>
+<li>Command line flags when running Terraform a <code>terraform.tfvars</code> file in the same directory</li>
+<li>Environment variables:
+Choose a build in the builds/ directory to deploy.
+For example, some options are:
+<ul>
+<li><code>aws_static_base</code>: Deploys core networking infrastructure (VPC, subnets, route tables, etc.)</li>
+<li><code>aws_eks</code>: Deploys an EKS cluster and node group</li>
+<li><code>aws_rds</code>: Deploys an RDS database instance</li>
+<li><code>aws_s3</code>: Deploys an S3 bucket</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>Run <code>terraform init</code> to initialize the build.</p>
+</li>
+<li>
+<p>Run <code>terraform plan</code> to preview the changes. Review the output to ensure the configuration is correct.</p>
+</li>
+<li>
+<p>Run <code>terraform apply</code> to deploy the infrastructure. Enter <code>yes</code> when prompted to confirm.</p>
+</li>
+</ol>
+<p>The infrastructure will now deploy. This can take 10-15 minutes for larger builds like <code>aws_eks</code>.</p>
+<p>Once deployed, you can view your AWS resources in the AWS Console and begin using services like EKS, RDS, and S3.</p>
+<p>When no longer needed, run <code>terraform destroy</code> to tear down the infrastructure.</p>
+<p>This will get you started with deploying the reference architecture.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="azure"><a class="header" href="#azure">Azure</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gcp"><a class="header" href="#gcp">GCP</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="score-1"><a class="header" href="#score-1">Score</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started-1"><a class="header" href="#getting-started-1">Getting started</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hello-world"><a class="header" href="#hello-world">Hello world</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="review-logs"><a class="header" href="#review-logs">Review logs</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="get-dns"><a class="header" href="#get-dns">Get DNS</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="set-shared-values-and-secrets"><a class="header" href="#set-shared-values-and-secrets">Set Shared Values and Secrets</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="working-with"><a class="header" href="#working-with">Working with</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="workload-variables"><a class="header" href="#workload-variables">Workload variables</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reference"><a class="header" href="#reference">Reference</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="command-reference-overview"><a class="header" href="#command-reference-overview">Command reference overview</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="delta"><a class="header" href="#delta">Delta</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="run"><a class="header" href="#run">Run</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="troubleshooting"><a class="header" href="#troubleshooting">Troubleshooting</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="platform-orchestrator"><a class="header" href="#platform-orchestrator">Platform Orchestrator</a></h1>
+<p>Humanitec powers your enterprise-grade Internal Developer Platform. The Humanitec Platform Orchestrator lets platform teams remove bottlenecks build golden paths for developers.</p>
+<p>Enterprises use Humanitec to standardize how they build and deliver software, enabling true developer self-service. This reduces lead time and slashes time to market.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="working-with-1"><a class="header" href="#working-with-1">Working with</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="applications"><a class="header" href="#applications">Applications</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="deployments"><a class="header" href="#deployments">Deployments</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="environments"><a class="header" href="#environments">Environments</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sets-and-deltas"><a class="header" href="#sets-and-deltas">Sets and Deltas</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="workloads"><a class="header" href="#workloads">Workloads</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="shared-values"><a class="header" href="#shared-values">Shared Values</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resources"><a class="header" href="#resources">Resources</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="overview-1"><a class="header" href="#overview-1">Overview</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dependent-resources"><a class="header" href="#dependent-resources">Dependent Resources</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="active-resources"><a class="header" href="#active-resources">Active Resources</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resource-definitions"><a class="header" href="#resource-definitions">Resource Definitions</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resource-graph"><a class="header" href="#resource-graph">Resource Graph</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="security"><a class="header" href="#security">Security</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="authentication"><a class="header" href="#authentication">Authentication</a></h1>
+<p>Use the Humanitec Platform Orchestrator API to authenticate and authorize users and applications.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rbac"><a class="header" href="#rbac">RBAC</a></h1>
+<p>Use Role-based Access Control (RBAC) to manage access to the Humanitec Platform Orchestrator.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="references"><a class="header" href="#references">References</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cli-reference"><a class="header" href="#cli-reference">CLI Reference</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="constraints"><a class="header" href="#constraints">Constraints</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="placeholders"><a class="header" href="#placeholders">Placeholders</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="deployment-sets-and-deltas"><a class="header" href="#deployment-sets-and-deltas">Deployment Sets and Deltas</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resource-types"><a class="header" href="#resource-types">Resource Types</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="integration-and-extensions"><a class="header" href="#integration-and-extensions">Integration and extensions</a></h1>
+<p>The Huamnitec Platform Orchestrator allows you to integrate with other tools and services.</p>
+<h2 id="direct-integrations"><a class="header" href="#direct-integrations">Direct integrations</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="drivers"><a class="header" href="#drivers">Drivers</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="humanitec-drivers"><a class="header" href="#humanitec-drivers">Humanitec Drivers</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="aws-route53"><a class="header" href="#aws-route53">AWS Route53</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cloudflare"><a class="header" href="#cloudflare">Cloudflare</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cluster"><a class="header" href="#cluster">Cluster</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="horizontal-pod-autoscaler"><a class="header" href="#horizontal-pod-autoscaler">Horizontal Pod Autoscaler</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ingress"><a class="header" href="#ingress">Ingress</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mariadb"><a class="header" href="#mariadb">MariaDB</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mysql"><a class="header" href="#mysql">MySQL</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="postgresql"><a class="header" href="#postgresql">PostgreSQL</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="static"><a class="header" href="#static">Static</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="template"><a class="header" href="#template">Template</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="terraform"><a class="header" href="#terraform">Terraform</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="volume-nfs"><a class="header" href="#volume-nfs">Volume NFS</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="volume-pvc"><a class="header" href="#volume-pvc">Volume PVC</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wildcard"><a class="header" href="#wildcard">WildCard</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="custom-drivers"><a class="header" href="#custom-drivers">Custom Drivers</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="manage-custom-drivers"><a class="header" href="#manage-custom-drivers">Manage Custom Drivers</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="register-custom-drivers"><a class="header" href="#register-custom-drivers">Register Custom Drivers</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="virtual-drivers"><a class="header" href="#virtual-drivers">Virtual Drivers</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="reference-1"><a class="header" href="#reference-1">Reference</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="driver-api-specification"><a class="header" href="#driver-api-specification">Driver API Specification</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="workload-profiles"><a class="header" href="#workload-profiles">Workload Profiles</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="profiles"><a class="header" href="#profiles">Profiles</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="features"><a class="header" href="#features">Features</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cicd"><a class="header" href="#cicd">CI/CD</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="webhooks"><a class="header" href="#webhooks">Webhooks</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="knowledge-base"><a class="header" href="#knowledge-base">Knowledge base</a></h1>
+<p>The knowledge base is a collection of articles that provide in-depth information about the Humanitec Platform Orchestrator and its features.</p>
+<h2 id="pause-and-resume-an-environment-deployment-set-based-on-a-schedule"><a class="header" href="#pause-and-resume-an-environment-deployment-set-based-on-a-schedule">Pause and Resume an Environment Deployment Set based on a Schedule</a></h2>
+<p>Use a Cron Job to pause and resume an Environment Deployment Set based on a schedule.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="concepts"><a class="header" href="#concepts">Concepts</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="applications-1"><a class="header" href="#applications-1">Applications</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dynamic-configuration-management"><a class="header" href="#dynamic-configuration-management">Dynamic Configuration Management</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="environments-1"><a class="header" href="#environments-1">Environments</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="organizations"><a class="header" href="#organizations">Organizations</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="glossary"><a class="header" href="#glossary">Glossary</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tutorials-2"><a class="header" href="#tutorials-2">Tutorials</a></h1>
+<p>Tutorials help you get started building or using the Humanitec Platform Orchestrator and Score.</p>
+<p>The following tutorials are available:</p>
+<ul>
+<li><a href="home/./home/tutorials/deploy_your_first_application.html">Deploy your first application</a></li>
+<li><a href="home/./home/tutorials/migrate_your_application.html">Migrate your application</a></li>
+<li><a href="home/./home/tutorials/build_production_ready_applications.html">Build production ready applications</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="troubleshooting-1"><a class="header" href="#troubleshooting-1">Troubleshooting</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="faq"><a class="header" href="#faq">FAQ</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contact"><a class="header" href="#contact">Contact</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
