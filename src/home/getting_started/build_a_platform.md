@@ -4,7 +4,7 @@ Platform Engineers build their Internal Developer Platforms (IDP) by leveraging 
 
 ## Why build an Internal Developer Platform with Humanitec?
 
-Humanitec provides a platform-agnostic Workload specification called Score. Score eliminates configuration management between local and remote environments, meaning, developers can deploy their applications to any environment without having to change their configuration.
+Humanitec provides a platform-agnostic workload specification called Score. Score eliminates configuration management between local and remote environments, meaning, developers can deploy their applications to any environment without having to change their configuration.
 
 The Humanitec Platform Orchestrator works as a deployment engine that enables Platform Engineering teams to build golden paths for developers. This means that Platform Engineering teams can build a self-service model for developers to deploy their applications to the cloud and developers can deploy their applications without having to wait for the Platform Engineering teams to do it for them.
 
